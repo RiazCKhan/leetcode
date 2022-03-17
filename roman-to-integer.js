@@ -29,7 +29,9 @@ const romanToInt = (string) => {
       romanNumV += 5
     }
 
-    if (stringArr[i] === "X") {
+    if (stringArr[i] === "X" && stringArr[i - 1] === "I") {
+      romanNumX += 9
+    } else if (stringArr[i] === "X") {
       romanNumX += 10
     }
 
