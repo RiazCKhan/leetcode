@@ -65,7 +65,7 @@ const romanToInt = (string) => {
 
     // EDGE IF "C" before "M" THEN M = 900
     if (stringArr[i] === "M" && stringArr[i - 1] === "C") {
-      romanNumM += 900
+      romanNumM += 900;
     } else if (stringArr[i] === "M") {
       romanNumM += 1000;
     }
@@ -82,26 +82,9 @@ const romanToInt = (string) => {
   result = romanNumI + romanNumV + romanNumX + romanNumL + romanNumC + romanNumD + romanNumM;
   console.log(result);
 
+  return result;
 };
 
 const x = "MCMXCIV";
 
 romanToInt(x);
-
-/*
-
-Input = "String"
-
-Edge Cases
-IF I before V = 4
-IF I before X = 9
-
-IF X before L = 40
-IF X before C = 90
-
-IF C before D = 400
-IF C before M = 900
-
-Output = "Number"
-
-*/
