@@ -10,19 +10,41 @@ const romanToInt = (string) => {
   let romanNumD = 0;
   let romanNumM = 0;
 
+  let result = 0;
+
   for (const letter of stringArr) {
 
     if (letter === "I") {
       romanNumI += 1
     }
+    if (letter === "V") {
+      romanNumV += 5
+    }
+    if (letter === "X") {
+      romanNumX += 10
+    }
+    if (letter === "L") {
+      romanNumL += 50
+    }
+    if (letter === "C") {
+      romanNumC += 100
+    }
+    if (letter === "D") {
+      romanNumD += 500
+    }
+    if (letter === "M") {
+      romanNumM += 1000
+    }
 
   }
 
-  console.log(romanNumI)
+result = romanNumI + romanNumV + romanNumX + romanNumL + romanNumC + romanNumD + romanNumM
+console.log(result)
+
 
 };
 
-const s = "III";
+const s = "LVIII";
 
 romanToInt(s);
 
