@@ -38,22 +38,29 @@ const romanToInt = (string) => {
 
   }
 
-result = romanNumI + romanNumV + romanNumX + romanNumL + romanNumC + romanNumD + romanNumM
-console.log(result)
+  result = romanNumI + romanNumV + romanNumX + romanNumL + romanNumC + romanNumD + romanNumM
+  console.log(result)
 
 
 };
 
 const s = "LVIII";
-
-romanToInt(s);
+const x = "MCMXCI"
+romanToInt(x);
 
 /*
 
 Input = "String"
 
-1. Split String into Arr
-2. Loop throug Arr
+Edge Cases
+IF I before V = 4
+IF I before X = 9
+
+IF X before L = 40
+IF X before C = 90
+
+IF C before D = 400
+IF C before M = 900
 
 Output = "Number"
 
