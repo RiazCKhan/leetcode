@@ -15,7 +15,7 @@ const romanToInt = (string) => {
 
   for (let i = 0; i <= stringArr.length; i++) {
 
-    // EDGE IF V after I
+    // EDGE IF "I" before "V"
     if (stringArr[i] === "I" && stringArr[i + 1] === "V" || stringArr[i + 1] === "X") {
       romanNumI += 0
     } else if (stringArr[i] === "I") {
@@ -29,17 +29,27 @@ const romanToInt = (string) => {
       romanNumV += 5
     }
 
-    if (stringArr[i] === "X" && stringArr[i - 1] === "I") {
+    // EDGE IF "X" before "L" OR "C"
+    // EDGE ELSE IF "I" before "X" THEN "X" = 9
+    if (stringArr[i] === "X" && stringArr[i + 1] === "L" || stringArr[i + 1] === "C") {
+      romanNumX += 0
+    } else if (stringArr[i] === "X" && stringArr[i - 1] === "I") {
       romanNumX += 9
     } else if (stringArr[i] === "X") {
       romanNumX += 10
     }
 
-    if (stringArr[i] === "L") {
+    // EDGE IF "X" before "L" THEN L = 40
+    if (stringArr[i] === "L" && stringArr[i - 1] === "X") {
+      romanNumL += 40
+    } else if (stringArr[i] === "L") {
       romanNumL += 50
     }
 
-    if (stringArr[i] === "C") {
+    // EDGE IF "X" before C THEN C = 90
+    if (stringArr[i] === "C" && stringArr[i - 1] === "X") {
+      romanNumC += 90
+    } else if (stringArr[i] === "C") {
       romanNumC += 100
     }
 
@@ -68,7 +78,7 @@ const romanToInt = (string) => {
 
 };
 
-const s = "IX";
+const s = "XC";
 const x = "MCMXCI"
 romanToInt(s);
 
