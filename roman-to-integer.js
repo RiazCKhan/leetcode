@@ -12,31 +12,53 @@ const romanToInt = (string) => {
 
   let result = 0;
 
-  for (const letter of stringArr) {
 
-    if (letter === "I") {
+  for (let i = 0; i <= stringArr.length; i++) {
+
+    // EDGE IF V after I
+    if (stringArr[i] === "I" && stringArr[i + 1] === "V" || stringArr[i + 1] === "X") {
+      romanNumI += 0
+    } else if (stringArr[i] === "I") {
       romanNumI += 1
     }
-    if (letter === "V") {
+
+    // EDGE IF "I" before "V" THEN "V" = 4
+    if (stringArr[i] === "V" && stringArr[i - 1] === "I") {
+      romanNumV += 4
+    } else if (stringArr[i] === "V") {
       romanNumV += 5
     }
-    if (letter === "X") {
+
+    if (stringArr[i] === "X") {
       romanNumX += 10
     }
-    if (letter === "L") {
+
+    if (stringArr[i] === "L") {
       romanNumL += 50
     }
-    if (letter === "C") {
+
+    if (stringArr[i] === "C") {
       romanNumC += 100
     }
-    if (letter === "D") {
+
+    if (stringArr[i] === "D") {
       romanNumD += 500
     }
-    if (letter === "M") {
+
+    if (stringArr[i] === "M") {
       romanNumM += 1000
     }
 
   }
+
+  console.log("I", romanNumI)
+  console.log("V", romanNumV)
+  console.log("X", romanNumX)
+  console.log("L", romanNumL)
+  console.log("C", romanNumC)
+  console.log("D", romanNumD)
+  console.log("M", romanNumM)
+
 
   result = romanNumI + romanNumV + romanNumX + romanNumL + romanNumC + romanNumD + romanNumM
   console.log(result)
@@ -44,9 +66,9 @@ const romanToInt = (string) => {
 
 };
 
-const s = "LVIII";
+const s = "IX";
 const x = "MCMXCI"
-romanToInt(x);
+romanToInt(s);
 
 /*
 
