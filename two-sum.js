@@ -13,8 +13,8 @@ const twoSum = (nums, target) => {
     for (let j = i + 1; j <= nums.length; j++) {
       console.log('this is inner j', j);
       if (nums[i] + nums[j] === target) {
-        result.push(nums[i]);
-        result.push(nums[j]);
+        result.push(i);
+        result.push(j);
       }
     }
   }
