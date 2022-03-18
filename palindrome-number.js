@@ -1,18 +1,12 @@
 const isPalindrome = (x) => {
 
-  let xArray = x.toString().split('')
-  let reverseArray = x.toString().split('').reverse()
+  let xStr = x.toString()
+  let reverseStr = x.toString().split('').reverse().join('')
 
-
-  for (let i = 0; i < xArray.length; i++) {
-
-    if(xArray[i] !== reverseArray) {
-      console.log('er')
-    }
-    
+  if (xArray !== reverseArray) {
+    return false
   }
-
-
+  return true
 }
 
 console.log(isPalindrome(121));
