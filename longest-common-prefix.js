@@ -1,12 +1,3 @@
-// identify 'prefix'
-// what is a prefix, common string at the begining of the world
-
-// input = arr
-// output = str
-
-// potential tools
-// match, includes, substr, split, indexOf
-
 const longestCommonPrefix = function(strs) {
 
   let prefixArr = [];
@@ -28,4 +19,4 @@ const longestCommonPrefix = function(strs) {
   return result[0];
 };
 
-console.log(longestCommonPrefix(["flower", "flow", "flight"]));
+longestCommonPrefix(["flower", "flow", "flight"])
