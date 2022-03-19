@@ -5,15 +5,20 @@ const longestCommonPrefix = function (strs) {
 
   let result = "";
 
+  if (strs[0].substring(0, 1) !== strs[1].substring(0, 1)) {
+    return ""
+  }
+
   for (let i = 0; i < strs.length; i++) {
-    if (strs[0].charAt(i) !== strs[i].charAt(i)) {
-      return "";
-    } else if (strs[0].charAt(i) !== strs[i].charAt(i)) {
+    // console.log('prefix', strs[0].charAt(i))
+    // console.log('compare', strs[i].charAt(i))
+    if (strs[0].charAt(i) === strs[i].charAt(i)) {
       result += strs[i].charAt(i)
     }
   }
+  // console.log('result', result)
   return result
 };
 
 // longestCommonPrefix(["flower", "flow", "flight"]);
-console.log(longestCommonPrefix(["dog", "racecar", "car"]))
+longestCommonPrefix(["dog", "racecar", "car"])
