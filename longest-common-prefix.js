@@ -1,28 +1,40 @@
-const longestCommonPrefix = function(strs) {
+const longestCommonPrefix = function (strs) {
 
-  let prefixArr = [];
-  let result = [];
+// check if first letter is the same
+// if same push to arr
 
-  strs.forEach((str) => {
-    if (!prefixArr.includes(str.substring(0, 1)))
-      prefixArr.push(str.substring(0, 1));
-  });
+let arr = [];
 
-  let prefixStr = prefixArr.join('');
+  for (let i = 0; i <= strs.length; i++) {
+   
+    console.log(strs[i])
 
-  strs.forEach((str) => {
-    if (prefixStr === str.substring(0, 1)) {
-      result.push(prefixStr);
-    }
-  });
-
-  if (result.length === 0) {
-    return "";
-  } else {
-    return result[0];
   }
+
+
+  // let prefixArr = [];
+  // let result = [];
+
+  // strs.forEach((str) => {
+  //   if (!prefixArr.includes(str.substring(0, 1)))
+  //     prefixArr.push(str.substring(0, 1));
+  // });
+
+  // let prefixStr = prefixArr.join('');
+
+  // strs.forEach((str) => {
+  //   if (prefixStr === str.substring(0, 1)) {
+  //     result.push(prefixStr);
+  //   }
+  // });
+
+  // if (result.length === 0) {
+  //   return "";
+  // } else {
+  //   return result[0];
+  // }
 
 };
 
-console.log(longestCommonPrefix(["flower", "flow", "flight"]));
-console.log(longestCommonPrefix(["dog", "racecar", "car"]));
+longestCommonPrefix(["flower", "flow", "flight"]);
+// console.log(longestCommonPrefix(["dog", "racecar", "car"]));
