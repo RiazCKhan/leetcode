@@ -3,12 +3,14 @@ const longestCommonPrefix = function (strs) {
   // check if first letter is the same
   // if same push to arr
 
-  let obj = {};
+  let result = "";
 
-
-
-  console.log(arr)
-  return
+  for (let i = 0; i < strs.length; i++) {
+    if (strs[0].charAt(i) === strs[i].charAt(i)) {
+      result += strs[i].charAt(i)
+    }
+  }
+console.log(result)
 };
 
 longestCommonPrefix(["flower", "flow", "flight"]);
