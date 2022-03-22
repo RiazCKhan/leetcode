@@ -1,20 +1,27 @@
-const isValid = function(s) {
-    
+const isValid = function (s) {
+
   let inputArr = s.split('')
 
   for (let i = 0; i <= inputArr.length; i++) {
 
+    // console.log(inputArr[i])
     if (inputArr[i] === '[') {
-      if (inputArr[i + 1] === ']') {
-        return true
+      // console.log('first if', inputArr[i])
+      if (inputArr[i + 1] !== ']') {
+        return false
+      }
+    }
+
+    if (inputArr[i] === '(') {
+      if (inputArr[i + 1] !== ')') {
+        return false
       }
     }
 
 
+
   }
-
-
-
+  return true;
 };
 
 // Solution Brain Storm
@@ -30,10 +37,10 @@ let test2 = "[]()"
 let test3 = "[](){}"
 
 // Unhappy --> return false
-let test4 = "(]"
+let test4 = "[)"
 let test5 = "}{"
 let test6 = "[](]"
 let test7 = "{)[]()"
 let test8 = ""
 
-isValid(test1);
+isValid(test2)
