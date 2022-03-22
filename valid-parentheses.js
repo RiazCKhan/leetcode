@@ -4,9 +4,7 @@ const isValid = function (s) {
 
   for (let i = 0; i <= inputArr.length; i++) {
 
-    // console.log(inputArr[i])
     if (inputArr[i] === '[') {
-      // console.log('first if', inputArr[i])
       if (inputArr[i + 1] !== ']') {
         return false
       }
@@ -18,8 +16,11 @@ const isValid = function (s) {
       }
     }
 
-
-
+    if (inputArr[i] === '{') {
+      if (inputArr[i + 1] !== '}') {
+        return false
+      }
+    }
   }
   return true;
 };
@@ -35,12 +36,13 @@ const isValid = function (s) {
 let test1 = "[]"
 let test2 = "[]()"
 let test3 = "[](){}"
+let test4 = '{[]}'
 
 // Unhappy --> return false
-let test4 = "[)"
-let test5 = "}{"
-let test6 = "[](]"
-let test7 = "{)[]()"
-let test8 = ""
+let test5 = "[)"
+let test6 = "}{"
+let test7 = "[](]"
+let test8 = "{)[]()"
+let test9 = ""
 
-isValid(test2)
+console.log(isValid(test3));
