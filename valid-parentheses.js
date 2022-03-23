@@ -11,13 +11,22 @@ const isValid = function (s) {
     if (s[i] === '(' || s[i] === '[' || s[i] === '{') {
       stack.push(s[i])
     } else {
-      // Will always be an open bracket
+      // Will always be an 'open bracket'.
       // This is because all items in the stack arr 
-      // are conditional pushed based on being an 'open bracket'
+      // are conditional pushed based on being an 'open bracket'.
       let last = stack.pop() 
       console.log('bang input', s[i])
       console.log('last', last)
-      console.log('bang conditional', !(s[i] === ')' && last === '('))
+      console.log('bang conditional', (!s[i] === ']' && last === '['))
+      console.log('bang conditional', (!s[i] === ')' && last === '('))
+      // Bang Explanation
+      // For example:
+      // if s[i] = ] && last = (
+      // The && requires both conditions to be true
+      // (s[i] is true && last is false) === false
+      // This indicates a invalid parentheses
+      // By adding the BANG, the state is now true
+      // If the condition evaluates true and the FN returns.
       if (! ((s[i] === ')' && last === '(') ||
         (s[i] === ']' && last === '[') ||
         (s[i] === '}' && last === '{'))) {
@@ -35,7 +44,6 @@ const isValid = function (s) {
 // Input = string
 // Output = boolean
 // Split Str to get individual 'items'
-//
 
 // TEST CASES
 // Happy Path --> return true
@@ -51,4 +59,4 @@ let test7 = "[](]"
 let test8 = "{)[]()"
 let test9 = ""
 
-isValid(test4)
+isValid(test1)
