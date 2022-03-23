@@ -1,28 +1,28 @@
 const isValid = function (s) {
 
-  let inputArr = s.split('')
+  let stack = []; // What is a Stack ?
 
-  for (let i = 0; i <= inputArr.length; i++) {
+  // IF input arr is uneven
+  if (s.length % 2 !== 0) {
+    return false;
+  }
 
-    if (inputArr[i] === '[') {
-      if (inputArr[i + 1] !== ']') {
-        return false
-      }
-    }
-
-    if (inputArr[i] === '(') {
-      if (inputArr[i + 1] !== ')') {
-        return false
-      }
-    }
-
-    if (inputArr[i] === '{') {
-      if (inputArr[i + 1] !== '}') {
+  for (let i = 0; i < s.length - 1; i++) { // Why s.length -1 ?
+    if (s[i] === '(' || s[i] === '[' || s[i] === '{') {
+      stack.push(s[i])
+    } else {
+      let last = stack.pop()
+      if (!(s[i] === ')' && last === '(') ||
+        (s[i] === ']' && last === '[') ||
+        (s[i] === '}' && last === '{')) {
         return false
       }
     }
   }
-  return true;
+  if (stack.length !== 0) {
+    return false;
+  }
+  return true
 };
 
 // Solution Brain Storm
@@ -45,4 +45,4 @@ let test7 = "[](]"
 let test8 = "{)[]()"
 let test9 = ""
 
-console.log(isValid(test3));
+isValid(test3);
