@@ -1,6 +1,6 @@
-const mergeTwoLists = function(list1, list2) {
+const mergeTwoLists = function (list1, list2) {
 
-let result = [];
+  let result = [];
 
   list1.forEach(element => {
     result.push(element)
@@ -10,8 +10,9 @@ let result = [];
     result.push(element)
   })
 
-  console.log(result)
-    
+  result.sort((a, b) => a - b)
+
+  return result
 };
 
 // PLAN
