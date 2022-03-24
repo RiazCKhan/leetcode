@@ -15,10 +15,11 @@ const mergeTwoLists = function(list1, list2) {
   return result;
 };
 
+
 let arr1 = [1, 2, 3];
 let arr2 = [1, 2, 4];
 
-console.log(mergeTwoLists(arr1, arr2));
+mergeTwoLists(arr1, arr2)
 
 // PLAN
 // forEach each List
