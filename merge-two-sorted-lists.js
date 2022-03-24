@@ -6,12 +6,15 @@ const mergeTwoLists = function (list1, list2) {
 
   let result = [];
 
-  for (let i = 0; i < list1.length; i++) {
-    result.push(list1[i])
+  let arrOne = Array.from(list1)
+  let arrTwo = Array.from(list2)
+
+  for (let i = 0; i < arrOne.length; i++) {
+    result.push(arrOne[i])
   }
 
-  for (let i = 0; i < list2.length; i++) {
-    result.push(list2[i])
+  for (let i = 0; i < arrTwo.length; i++) {
+    result.push(arrTwo[i])
   }
 
   result.sort((a, b) => a - b);
