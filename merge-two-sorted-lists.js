@@ -1,24 +1,24 @@
-const mergeTwoLists = function (list1, list2) {
+const mergeTwoLists = function(list1, list2) {
 
   let result = [];
 
   list1.forEach(element => {
-    return result.push(element)
+    return result.push(element);
   });
 
   list2.forEach(element => {
-    return result.push(element)
-  })
+    return result.push(element);
+  });
 
-  result.sort((a, b) => a - b)
+  result.sort((a, b) => a - b);
 
-  return result
+  return result;
 };
 
-let arr1 = [1, 2, 3]
-let arr2 = [1, 2, 4]
+let arr1 = [1, 2, 3];
+let arr2 = [1, 2, 4];
 
-console.log(mergeTwoLists(arr1, arr2))
+console.log(mergeTwoLists(arr1, arr2));
 
 // PLAN
 // forEach each List
